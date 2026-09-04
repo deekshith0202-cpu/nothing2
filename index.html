@@ -1,0 +1,1224 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Someone Special 🦚💙</title>
+
+<style>
+
+/* ================================
+   RESET
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ================================
+   BODY
+================================ */
+
+body {
+    min-height: 100vh;
+
+    /* FIXED: scrolling is now allowed */
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    background:
+        radial-gradient(
+            circle at 50% 15%,
+            #263f83 0%,
+            #111d48 35%,
+            #060918 75%,
+            #02030b 100%
+        );
+
+    color: white;
+}
+
+
+/* ================================
+   BACKGROUND GLOW
+================================ */
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+
+    left: 50%;
+    top: 15%;
+
+    transform: translate(-50%, -50%);
+
+    background: rgba(50, 100, 255, 0.10);
+
+    border-radius: 50%;
+
+    filter: blur(80px);
+
+    pointer-events: none;
+}
+
+
+/* ================================
+   STARS
+================================ */
+
+.stars {
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+
+    width: 3px;
+    height: 3px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    animation:
+        twinkle 2s infinite alternate,
+        starMove 8s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+
+    0% {
+        opacity: 0.15;
+        transform: scale(0.6);
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+}
+
+@keyframes starMove {
+
+    0%,100% {
+        margin-top: 0;
+    }
+
+    50% {
+        margin-top: -5px;
+    }
+}
+
+
+/* ================================
+   MOON
+================================ */
+
+.moon {
+    position: fixed;
+
+    top: 45px;
+    right: 35px;
+
+    width: 95px;
+    height: 95px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #ffffff 0%,
+            #fff7cf 45%,
+            #ffeaa0 100%
+        );
+
+    box-shadow:
+        0 0 20px rgba(255, 244, 196, 0.8),
+        0 0 50px rgba(255, 244, 196, 0.5),
+        0 0 100px rgba(255, 244, 196, 0.2);
+
+    animation: moonGlow 4s infinite alternate;
+
+    z-index: 1;
+}
+
+@keyframes moonGlow {
+
+    from {
+        box-shadow:
+            0 0 20px rgba(255,244,196,.7),
+            0 0 45px rgba(255,244,196,.4);
+    }
+
+    to {
+        box-shadow:
+            0 0 30px rgba(255,244,196,.9),
+            0 0 70px rgba(255,244,196,.6);
+    }
+}
+
+
+/* ================================
+   CONTAINER
+================================ */
+
+.container {
+
+    position: relative;
+
+    z-index: 2;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    /* FIXED: allows long content to scroll */
+    align-items: flex-start;
+
+    padding:
+        80px 20px
+        100px;
+}
+
+
+/* ================================
+   CARD
+================================ */
+
+.card {
+
+    width: min(92%, 520px);
+
+    padding: 35px 28px;
+
+    text-align: center;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(11, 25, 70, .88),
+            rgba(5, 12, 40, .78)
+        );
+
+    border:
+        1px solid rgba(255,255,255,.18);
+
+    box-shadow:
+        0 0 40px rgba(55,120,255,.20),
+        inset 0 0 30px rgba(100,150,255,.04);
+
+    backdrop-filter: blur(14px);
+
+    animation: cardAppear 1.2s ease;
+}
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(40px)
+            scale(.96);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* ================================
+   PEACOCK
+================================ */
+
+.peacock {
+
+    font-size: 68px;
+
+    display: inline-block;
+
+    animation:
+        peacockFloat 3s ease-in-out infinite,
+        peacockGlow 2.5s infinite alternate;
+
+    filter:
+        drop-shadow(0 0 15px rgba(70,150,255,.5));
+}
+
+@keyframes peacockFloat {
+
+    0%,100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(2deg);
+    }
+}
+
+@keyframes peacockGlow {
+
+    from {
+        filter:
+            drop-shadow(0 0 8px rgba(60,140,255,.3));
+    }
+
+    to {
+        filter:
+            drop-shadow(0 0 25px rgba(80,170,255,.8));
+    }
+}
+
+
+/* ================================
+   TITLE
+================================ */
+
+h1 {
+
+    margin-top: 12px;
+
+    font-size: 30px;
+
+    color: #ffd76a;
+
+    text-shadow:
+        0 0 10px #ffd76a,
+        0 0 25px rgba(255,200,80,.4);
+
+    animation: titleGlow 3s infinite alternate;
+}
+
+@keyframes titleGlow {
+
+    from {
+        text-shadow:
+            0 0 8px #ffd76a;
+    }
+
+    to {
+        text-shadow:
+            0 0 20px #ffd76a,
+            0 0 35px rgba(255,190,60,.5);
+    }
+}
+
+
+/* ================================
+   SUBTITLE
+================================ */
+
+.subtitle {
+
+    margin-top: 12px;
+
+    color: #bfd5ff;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+}
+
+
+/* ================================
+   FLUTE
+================================ */
+
+.flute {
+
+    font-size: 40px;
+
+    margin-top: 20px;
+
+    opacity: .95;
+
+    animation:
+        fluteFloat 3s ease-in-out infinite;
+}
+
+@keyframes fluteFloat {
+
+    0%,100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+}
+
+
+/* ================================
+   BUTTON
+================================ */
+
+button {
+
+    margin-top: 28px;
+
+    padding:
+        15px 25px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffe17b,
+            #ffb52e,
+            #ff932d
+        );
+
+    color: #261600;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 15px rgba(255,190,70,.4),
+        0 0 35px rgba(255,170,50,.15);
+
+    transition:
+        transform .3s,
+        box-shadow .3s;
+}
+
+button:hover {
+
+    transform:
+        scale(1.06)
+        translateY(-2px);
+
+    box-shadow:
+        0 0 25px rgba(255,200,80,.7),
+        0 0 45px rgba(255,170,50,.3);
+}
+
+button:active {
+
+    transform:
+        scale(.96);
+}
+
+
+/* ================================
+   MESSAGE
+================================ */
+
+.message {
+
+    display: none;
+
+    margin-top: 28px;
+
+    padding-top: 10px;
+
+    animation:
+        messageReveal 1.5s
+        cubic-bezier(.22,1,.36,1);
+}
+
+@keyframes messageReveal {
+
+    0% {
+        opacity: 0;
+        transform:
+            translateY(40px)
+            scale(.97);
+        filter: blur(8px);
+    }
+
+    60% {
+        opacity: .8;
+        filter: blur(2px);
+    }
+
+    100% {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+        filter: blur(0);
+    }
+}
+
+
+/* ================================
+   MESSAGE HEADING
+================================ */
+
+.message h2 {
+
+    color: #ffd76a;
+
+    margin-bottom: 22px;
+
+    font-size: 22px;
+
+    text-shadow:
+        0 0 12px rgba(255,215,106,.5);
+}
+
+
+/* ================================
+   PARAGRAPHS
+================================ */
+
+.message p {
+
+    line-height: 1.85;
+
+    font-size: 16px;
+
+    color: #f4f6ff;
+
+    margin-bottom: 18px;
+}
+
+
+/* ================================
+   HIGHLIGHT
+================================ */
+
+.highlight {
+
+    color: #78b9ff;
+
+    font-weight: bold;
+
+    text-shadow:
+        0 0 8px rgba(80,160,255,.5);
+}
+
+
+/* ================================
+   FINAL MESSAGE
+================================ */
+
+.final {
+
+    margin-top: 22px;
+
+    color: #ffd76a !important;
+
+    font-size: 18px !important;
+
+    line-height: 1.7 !important;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+.footer {
+
+    margin-top: 28px;
+
+    font-size: 12px;
+
+    color: #8fa8d8;
+
+    opacity: .9;
+}
+
+
+/* ================================
+   DIYAS
+================================ */
+
+.diya {
+
+    position: fixed;
+
+    bottom: 22px;
+
+    font-size: 32px;
+
+    z-index: 5;
+
+    filter:
+        drop-shadow(0 0 10px rgba(255,170,50,.7));
+
+    animation:
+        diyaFloat 3s ease-in-out infinite;
+}
+
+.diya.left {
+    left: 25px;
+}
+
+.diya.right {
+    right: 25px;
+
+    animation-delay: 1s;
+}
+
+@keyframes diyaFloat {
+
+    0%,100% {
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translateY(-10px)
+            scale(1.05);
+    }
+}
+
+
+/* ================================
+   FALLING FLOWERS
+================================ */
+
+.flower {
+
+    position: fixed;
+
+    top: -40px;
+
+    font-size: 20px;
+
+    z-index: 10;
+
+    pointer-events: none;
+
+    animation:
+        fall linear forwards;
+}
+
+@keyframes fall {
+
+    0% {
+        transform:
+            translateY(-40px)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* ================================
+   FEATHER GLOW
+================================ */
+
+.feather {
+
+    position: fixed;
+
+    font-size: 26px;
+
+    opacity: .5;
+
+    pointer-events: none;
+
+    z-index: 1;
+
+    animation:
+        featherFloat 6s ease-in-out infinite;
+}
+
+.feather.one {
+    left: 8%;
+    top: 25%;
+}
+
+.feather.two {
+    right: 8%;
+    top: 45%;
+
+    animation-delay: 2s;
+}
+
+@keyframes featherFloat {
+
+    0%,100% {
+        transform:
+            translateY(0)
+            rotate(-5deg);
+    }
+
+    50% {
+        transform:
+            translateY(-20px)
+            rotate(8deg);
+    }
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+
+    .container {
+
+        padding:
+            70px 14px
+            90px;
+    }
+
+    .card {
+
+        width: 100%;
+
+        padding:
+            28px 20px;
+
+        border-radius: 25px;
+    }
+
+    .peacock {
+
+        font-size: 58px;
+    }
+
+    h1 {
+
+        font-size: 25px;
+    }
+
+    .subtitle {
+
+        font-size: 14px;
+    }
+
+    .flute {
+
+        font-size: 34px;
+    }
+
+    button {
+
+        width: 100%;
+
+        padding:
+            14px 12px;
+
+        font-size: 15px;
+    }
+
+    .message h2 {
+
+        font-size: 20px;
+    }
+
+    .message p {
+
+        font-size: 15px;
+
+        line-height: 1.8;
+    }
+
+    .final {
+
+        font-size: 17px !important;
+    }
+
+    .moon {
+
+        width: 65px;
+        height: 65px;
+
+        top: 25px;
+        right: 20px;
+    }
+
+    .diya {
+
+        font-size: 26px;
+
+        bottom: 15px;
+    }
+
+    .diya.left {
+
+        left: 12px;
+    }
+
+    .diya.right {
+
+        right: 12px;
+    }
+}
+
+
+/* ================================
+   VERY SMALL PHONES
+================================ */
+
+@media (max-width: 380px) {
+
+    .card {
+
+        padding:
+            25px 16px;
+    }
+
+    h1 {
+
+        font-size: 22px;
+    }
+
+    .message p {
+
+        font-size: 14px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ================================
+     STARS
+================================ -->
+
+<div class="stars" id="stars"></div>
+
+
+<!-- ================================
+     MOON
+================================ -->
+
+<div class="moon"></div>
+
+
+<!-- ================================
+     FLOATING PEACOCK FEATHERS
+================================ -->
+
+<div class="feather one">🪶</div>
+<div class="feather two">🪶</div>
+
+
+<!-- ================================
+     MAIN
+================================ -->
+
+<div class="container">
+
+    <div class="card">
+
+        <!-- Peacock -->
+        <div class="peacock">
+            🦚
+        </div>
+
+
+        <!-- Title -->
+        <h1>
+            Happy Janmashtami 💙
+        </h1>
+
+
+        <!-- Subtitle -->
+        <div class="subtitle">
+
+            A little surprise for someone
+            who trusts Krishna... ✨
+
+        </div>
+
+
+        <!-- Flute -->
+        <div class="flute">
+
+            🪈 ✨ 🪷
+
+        </div>
+
+
+        <!-- Button -->
+        <button onclick="openWish()">
+
+            🦚 Tap for Your Krishna Wish 🦚
+
+        </button>
+
+
+        <!-- ================================
+             HIDDEN MESSAGE
+        ================================= -->
+
+        <div
+            class="message"
+            id="message"
+        >
+
+            <h2>
+                💙 A Little Message For You 💙
+            </h2>
+
+
+            <p>
+
+                On this beautiful Janmashtami,
+                I just want to wish you something
+                a little different.
+
+            </p>
+
+
+            <p>
+
+                You trust Krishna so deeply,
+                and I hope that same faith always
+                gives you the strength to keep going,
+                even when life doesn't make sense.
+
+            </p>
+
+
+            <p>
+
+                May
+                <span class="highlight">
+                    Krishna
+                </span>
+
+                always guide your path,
+                protect your heart,
+                and bring you closer to everything
+                you've been praying for. 🪷
+
+            </p>
+
+
+            <p>
+
+                Whenever you feel lost,
+                remember that Krishna's timing
+                is always different from ours...
+                but never without a reason. 💙
+
+            </p>
+
+
+            <p class="final">
+
+                May your smile stay beautiful,
+                your heart stay peaceful,
+                and your faith in Krishna
+                become stronger every day. 🦚✨
+
+            </p>
+
+
+            <p class="final">
+
+                Happy Janmashtami,
+
+                <br>
+
+                <span id="friendName">
+                    My Special Friend
+                </span>
+
+                💙
+
+            </p>
+
+
+            <div class="footer">
+
+                Made with a little friendship
+                & lots of good wishes ✨
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================================
+     DIYAS
+================================ -->
+
+<div class="diya left">
+    🪔
+</div>
+
+<div class="diya right">
+    🪔
+</div>
+
+
+<script>
+
+
+/* ================================
+   CHANGE THESE
+================================ */
+
+const friendName = "likitha";
+const yourName = "Deekshith";
+
+
+/* ================================
+   FRIEND NAME
+================================ */
+
+document.getElementById("friendName").innerHTML =
+    friendName;
+
+
+/* ================================
+   CREATE STARS
+================================ */
+
+const starsContainer =
+    document.getElementById("stars");
+
+
+for (let i = 0; i < 100; i++) {
+
+    const star =
+        document.createElement("div");
+
+    star.className = "star";
+
+    star.style.left =
+        Math.random() * 100 + "%";
+
+    star.style.top =
+        Math.random() * 100 + "%";
+
+    const size =
+        Math.random() * 3 + 1;
+
+    star.style.width =
+        size + "px";
+
+    star.style.height =
+        size + "px";
+
+    star.style.animationDelay =
+        Math.random() * 3 + "s";
+
+    star.style.animationDuration =
+        (1.5 + Math.random() * 3) + "s";
+
+    starsContainer.appendChild(star);
+}
+
+
+/* ================================
+   OPEN WISH
+================================ */
+
+function openWish() {
+
+    const button =
+        document.querySelector("button");
+
+    const message =
+        document.getElementById("message");
+
+
+    /* Hide button */
+
+    button.style.transition =
+        "opacity .5s, transform .5s";
+
+    button.style.opacity = "0";
+
+    button.style.transform =
+        "scale(.8)";
+
+
+    setTimeout(() => {
+
+        button.style.display =
+            "none";
+
+        message.style.display =
+            "block";
+
+
+        /* Start flowers */
+
+        createFlowers();
+
+
+    }, 450);
+
+}
+
+
+/* ================================
+   FALLING FLOWERS
+================================ */
+
+function createFlowers() {
+
+    const flowers = [
+
+        "🌸",
+        "🪷",
+        "✨",
+        "💙",
+        "🦚",
+        "🌼"
+
+    ];
+
+
+    for (let i = 0; i < 35; i++) {
+
+        const flower =
+            document.createElement("div");
+
+        flower.className =
+            "flower";
+
+
+        flower.innerHTML =
+            flowers[
+                Math.floor(
+                    Math.random()
+                    * flowers.length
+                )
+            ];
+
+
+        flower.style.left =
+            Math.random() * 100 + "%";
+
+
+        flower.style.fontSize =
+            (15 + Math.random() * 12) + "px";
+
+
+        flower.style.animationDuration =
+            (4 + Math.random() * 5) + "s";
+
+
+        flower.style.animationDelay =
+            Math.random() * 2 + "s";
+
+
+        document.body.appendChild(
+            flower
+        );
+
+
+        setTimeout(() => {
+
+            flower.remove();
+
+        }, 10000);
+
+    }
+
+}
+
+
+/* ================================
+   EXTRA FLOATING PETALS
+================================ */
+
+setInterval(() => {
+
+    const petals = [
+        "🪷",
+        "🌸",
+        "✨"
+    ];
+
+    const petal =
+        document.createElement("div");
+
+    petal.className =
+        "flower";
+
+    petal.innerHTML =
+        petals[
+            Math.floor(
+                Math.random()
+                * petals.length
+            )
+        ];
+
+    petal.style.left =
+        Math.random() * 100 + "%";
+
+    petal.style.fontSize =
+        "18px";
+
+    petal.style.animationDuration =
+        "7s";
+
+    document.body.appendChild(
+        petal
+    );
+
+
+    setTimeout(() => {
+
+        petal.remove();
+
+    }, 7500);
+
+}, 5000);
+
+
+</script>
+
+</body>
+</html>
+```
